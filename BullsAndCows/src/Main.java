@@ -14,57 +14,56 @@ public class Main {
             System.out.println("Попробуйте еще раз!");
             return;
         }
-        //System.out.println(repeat);
         System.out.println("Загадайте четыре цифры");
-        ArrayList<Integer> arrayList1 = new ArrayList<>();
+        Map<Integer, Integer> hashMap1 = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
         for (int i = 0; i < 4; i++) {
             int number = scanner.nextInt();
             if (number < 10) {
-                arrayList1.add(number);
+                hashMap1.put(i, number);
+                set.add(number);
             } else {
                 System.out.println("Вводить необходимо цифру! Попробуйте еще раз!");
                 return;
             }
         }
-        Set<Integer> set = new HashSet<>(arrayList1);
-        boolean checkRepeat = set.size() < arrayList1.size();
-        if (!repeat && checkRepeat) {
+        if (!repeat && set.size() < 4) {
             System.out.println("Цифры не должны повторяться! Попробуйте еще раз!");
             return;
         }
-        for (int i = 0; i < arrayList1.size(); i++) {
-            System.out.print(arrayList1.get(i));
+        for (int i = 0; i < hashMap1.size(); i++) {
+            System.out.print(hashMap1.get(i));
         }
         System.out.println();
         System.out.println("Угадайте четыре цифры");
-        ArrayList<Integer> arrayList2 = new ArrayList<>();
+        Map<Integer, Integer> hashMap2 = new HashMap<>();
         for (int i = 0; i < 4; i++) {
             int number = scanner.nextInt();
             if (number < 10) {
-                arrayList2.add(number);
+                hashMap2.put(i, number);
             } else {
                 System.out.println("Вводить необходимо цифру! Попробуйте еще раз!");
                 return;
             }
         }
-        for (int i = 0; i < arrayList2.size(); i++) {
-            System.out.print(arrayList2.get(i));
+        for (int i = 0; i < hashMap2.size(); i++) {
+            System.out.print(hashMap2.get(i));
         }
         System.out.println();
 
         int sum1 = 0;
-        for (int i = 0; i < arrayList2.size(); i++) {
-            if(arrayList1.contains(arrayList2.get(i))){
+        for (int i = 0; i < 4; i++) {
+            if (hashMap1.containsValue(hashMap2.get(i)) && !hashMap1.get(i).equals(hashMap2.get(i))) {
                 sum1 = sum1 + 1;
             }
         }
         int sum2 = 0;
-        for (int i = 0; i < arrayList2.size(); i++) {
-            if(arrayList1.get(i) == arrayList2.get(i)){
+        for (int i = 0; i < 4; i++) {
+            if (hashMap1.get(i).equals(hashMap2.get(i))) {
                 sum2 = sum2 + 1;
             }
         }
-        System.out.println("Нашел " + sum1 + " совпадений независимо от местоположения цифр и " + sum2 + " совпадений включая их позицию");
+        System.out.println("Результат: найдено" + sum1 + " коровы и " + sum2 + " быка");
         if(sum2 == 4){
             System.out.println("Вы победили!");
         }
