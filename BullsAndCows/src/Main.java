@@ -3,17 +3,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Хотите включить повторяющиеся цифры? YES OR NO");
-        String repeatCheck = scanner.nextLine();
-        boolean repeat = false;
-        if (repeatCheck.equals("YES") || repeatCheck.equals("Yes") || repeatCheck.equals("yes")) {
-            repeat = true;
-        } else if (repeatCheck.equals("NO") || repeatCheck.equals("No") || repeatCheck.equals("no")) {
-            repeat = false;
-        } else {
-            System.out.println("Попробуйте еще раз!");
-            return;
-        }
+        boolean repeat = repeatNumbersCheck();
         System.out.println("Загадайте четыре цифры");
         Map<Integer, Integer> hashMap1 = new HashMap<>();
         Set<Integer> set = new HashSet<>();
@@ -63,9 +53,23 @@ public class Main {
                 sum2 = sum2 + 1;
             }
         }
-        System.out.println("Результат: найдено" + sum1 + " коровы и " + sum2 + " быка");
+        System.out.println("Результат: найдено " + sum1 + " коровы и " + sum2 + " быка");
         if(sum2 == 4){
             System.out.println("Вы победили!");
+        }
+    }
+    public static boolean repeatNumbersCheck(){
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
+            System.out.println("Хотите включить повторяющиеся цифры? YES OR NO");
+            String repeatCheck = scanner.nextLine();
+            if (repeatCheck.equalsIgnoreCase("YES")) {
+                return true;
+            } else if (repeatCheck.equalsIgnoreCase("NO")) {
+                return false;
+            } else {
+                System.out.println("Попробуйте еще раз!");
+            }
         }
     }
 }
