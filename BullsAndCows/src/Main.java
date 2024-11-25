@@ -5,11 +5,11 @@ public class Main {
     private static Map<Integer, Integer> hashMap2 = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
     private static int lengthNumber;
+    private static boolean repeat = repeatNumbersCheck();
 
     public static void main(String[] args) throws InterruptedException {
-        boolean repeat = repeatNumbersCheck();
         writeNumbers(repeat);
-        guessNumbers();
+        guessNumbers(repeat);
     }
 
     public static boolean repeatNumbersCheck() {
@@ -56,23 +56,30 @@ public class Main {
         }
     }
 
-    public static void guessNumbers() throws InterruptedException {
+    public static void guessNumbers(boolean repeatStateCheck) throws InterruptedException {
         System.out.println("Угадайте " + lengthNumber + " цифры");
+        Set<Integer> set = new HashSet<>();
         boolean checkNumbers = false;
 
         while (!checkNumbers) {
             hashMap2.clear();
+            set.clear();
             for (int i = 0; i < lengthNumber; i++) {
                 int number = scanner.nextInt();
                 if (number < 10) {
                     hashMap2.put(i, number);
+                    set.add(number);
                 } else {
                     System.out.println("Вводить необходимо цифру! Попробуйте еще раз!");
                     break;
                 }
             }
             if(hashMap2.size()==lengthNumber) {
-                checkNumbers = true;
+                if (!repeatStateCheck && set.size()< lengthNumber) {
+                    System.out.println("Цифры не должны повторяться! Попробуйте еще раз!");
+                } else {
+                    checkNumbers = true;
+                }
             }
         }
         checkResult();
@@ -98,7 +105,7 @@ public class Main {
             System.out.println("Вы победили!");
             Thread.sleep(15000);
         } else {
-            guessNumbers();
+            guessNumbers(repeat);
         }
     }
 }
