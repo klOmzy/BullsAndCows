@@ -57,7 +57,7 @@ public class Main {
     }
 
     public static void guessNumbers() throws InterruptedException {
-        System.out.println("Угадайте четыре цифры");
+        System.out.println("Угадайте " + lengthNumber + " цифры");
         boolean checkNumbers = false;
 
         while (!checkNumbers) {
