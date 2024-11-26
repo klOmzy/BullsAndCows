@@ -59,7 +59,6 @@ public class GameControl {
         System.out.println("Угадайте " + lengthNumber + " цифры");
         Set<Integer> set = new HashSet<>();
         boolean checkNumbers = false;
-
         while (!checkNumbers) {
             hashMap2.clear();
             set.clear();
@@ -91,13 +90,11 @@ public class GameControl {
                 sum1 = sum1 + 1;
             }
         }
-
         for (int i = 0; i < lengthNumber; i++) {
             if (hashMap1.get(i).equals(hashMap2.get(i))) {
                 sum2 = sum2 + 1;
             }
         }
-
         System.out.println("Результат: найдено " + sum1 + " коровы и " + sum2 + " быка");
         if (sum2 == lengthNumber) {
             System.out.println("Вы победили!");
