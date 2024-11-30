@@ -7,7 +7,7 @@ public class InputStrategyFactory {
             case 2:
                 return new FileInputStrategy();
             default:
-                throw new IllegalArgumentException("Invalid option");
+                throw new IllegalArgumentException("Некорректный ввод");
         }
     }
 }

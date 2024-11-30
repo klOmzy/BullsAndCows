@@ -46,7 +46,8 @@ public class FileInputStrategy implements InputStrategy {
             }
         }
         if(!checkNumbers){
-            GameControl.getInstance().numberOptCheck();
+            RepeatAndOptionCheck repeatAndOptionCheck = new RepeatAndOptionCheck();
+            repeatAndOptionCheck.numberOptCheck();
         }
     }
     @Override
