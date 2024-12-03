@@ -1,4 +1,6 @@
-package com.game.bullsandcows;
+package com.game.bullsandcows.input;
+
+import com.game.bullsandcows.result.RepeatAndOptionCheck;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

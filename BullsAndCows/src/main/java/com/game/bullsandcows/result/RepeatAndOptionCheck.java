@@ -1,4 +1,7 @@
-package com.game.bullsandcows;
+package com.game.bullsandcows.result;
+
+import com.game.bullsandcows.input.InputStrategy;
+import com.game.bullsandcows.input.InputStrategyFactory;
 
 import java.util.HashMap;
 import java.util.Map;

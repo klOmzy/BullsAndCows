@@ -1,4 +1,4 @@
-package com.game.bullsandcows;
+package com.game.bullsandcows.input;
 
 import java.util.Map;
 

@@ -1,5 +1,8 @@
 package com.game.bullsandcows;
 
+import com.game.bullsandcows.result.GuessAndResultCheck;
+import com.game.bullsandcows.result.RepeatAndOptionCheck;
+
 public class GameControl {
     private static GameControl instance;
 
