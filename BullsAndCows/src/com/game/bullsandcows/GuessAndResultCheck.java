@@ -1,3 +1,5 @@
+package com.game.bullsandcows;
+
 import java.util.*;
 
 public class GuessAndResultCheck {
@@ -37,6 +39,7 @@ public class GuessAndResultCheck {
         }
         checkResult(repeatStateCheck);
     }
+
     public void checkResult(boolean repeatStateCheck) throws InterruptedException {
         int sum1 = 0;
         int sum2 = 0;
@@ -57,5 +60,28 @@ public class GuessAndResultCheck {
         } else {
             guessNumbers(repeatStateCheck);
         }
+    }
+
+    public int[] checkResult(String originalNumber, String guessedNumber) {
+        int bulls = 0;
+        int cows = 0;
+
+        Map<Integer, Integer> originalMap = new HashMap<>();
+        Map<Integer, Integer> guessedMap = new HashMap<>();
+
+        for (int i = 0; i < originalNumber.length(); i++) {
+            originalMap.put(i, Character.getNumericValue(originalNumber.charAt(i)));
+            guessedMap.put(i, Character.getNumericValue(guessedNumber.charAt(i)));
+        }
+
+        for (int i = 0; i < originalNumber.length(); i++) {
+            if (originalMap.get(i).equals(guessedMap.get(i))) {
+                bulls++;
+            } else if (originalMap.containsValue(guessedMap.get(i))) {
+                cows++;
+            }
+        }
+
+        return new int[]{bulls, cows};
     }
 }

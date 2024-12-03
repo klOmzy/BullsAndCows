@@ -1,3 +1,5 @@
+package com.game.bullsandcows;
+
 public class InputStrategyFactory {
 
     public static InputStrategy createInputStrategy(int option) {

@@ -1,3 +1,5 @@
+package com.game.bullsandcows;
+
 import java.util.*;
 
 public class ConsoleInputStrategy implements InputStrategy {

@@ -1,4 +1,4 @@
-import java.util.*;
+package com.game.bullsandcows;
 
 public class GameControl {
     private static GameControl instance;
