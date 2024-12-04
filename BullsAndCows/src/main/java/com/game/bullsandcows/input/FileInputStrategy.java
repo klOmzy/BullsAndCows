@@ -2,9 +2,7 @@ package com.game.bullsandcows.input;
 
 import com.game.bullsandcows.result.RepeatAndOptionCheck;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -16,10 +14,14 @@ public class FileInputStrategy implements InputStrategy {
 
     @Override
     public void inputNumbers(boolean repeatStateCheck) {
-        String path = "BullsAndCows/numbers.txt";
+        String path = "numbers.txt";
         boolean checkNumbers = true;
         Set<Integer> set = new HashSet<>();
-        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
+        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(path);
+             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+            if (inputStream == null) {
+                throw new IOException("File not found: " + path);
+            }
             String line;
             int mapKey = 0;
             while ((line = reader.readLine()) != null) {

@@ -56,32 +56,23 @@ public class GuessAndResultCheck {
         System.out.println("Результат: найдено " + sum1 + " коровы и " + sum2 + " быка");
         if (sum2 == lengthNumber) {
             System.out.println("Вы победили!");
-            Thread.sleep(15000);
+//            Thread.sleep(15000);
         } else {
             guessNumbers(repeatStateCheck);
         }
     }
+    public static Map<Integer, Integer> getHashMap2() {
+        return hashMap2;
+    }
+    public static void setHashMap2(Map<Integer, Integer> hashMap2) {
+        GuessAndResultCheck.hashMap2 = hashMap2;
+    }
 
-    public int[] checkResult(String originalNumber, String guessedNumber) {
-        int bulls = 0;
-        int cows = 0;
+    public static void setHashMap1(Map<Integer, Integer> hashMap1) {
+        GuessAndResultCheck.hashMap1 = hashMap1;
+    }
 
-        Map<Integer, Integer> originalMap = new HashMap<>();
-        Map<Integer, Integer> guessedMap = new HashMap<>();
-
-        for (int i = 0; i < originalNumber.length(); i++) {
-            originalMap.put(i, Character.getNumericValue(originalNumber.charAt(i)));
-            guessedMap.put(i, Character.getNumericValue(guessedNumber.charAt(i)));
-        }
-
-        for (int i = 0; i < originalNumber.length(); i++) {
-            if (originalMap.get(i).equals(guessedMap.get(i))) {
-                bulls++;
-            } else if (originalMap.containsValue(guessedMap.get(i))) {
-                cows++;
-            }
-        }
-
-        return new int[]{bulls, cows};
+    public static void setLengthNumber(int lengthNumber) {
+        GuessAndResultCheck.lengthNumber = lengthNumber;
     }
 }

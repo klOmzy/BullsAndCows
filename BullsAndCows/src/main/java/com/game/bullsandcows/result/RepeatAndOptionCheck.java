@@ -9,17 +9,19 @@ import java.util.Scanner;
 
 public class RepeatAndOptionCheck {
     private static Scanner scanner = new Scanner(System.in);
-    private static boolean repeat = repeatNumbersCheck();
+    private static boolean repeat;
     private static Map<Integer, Integer> hashMap1 = new HashMap<>();
     private static int lengthNumber;
 
-    private static boolean repeatNumbersCheck() {
+    public static boolean repeatNumbersCheck() {
         while (true) {
             System.out.println("Хотите включить повторяющиеся цифры? YES OR NO");
             String repeatCheck = scanner.nextLine();
             if (repeatCheck.equalsIgnoreCase("YES")) {
+                repeat = true;
                 return true;
             } else if (repeatCheck.equalsIgnoreCase("NO")) {
+                repeat = false;
                 return false;
             } else {
                 System.out.println("Попробуйте еще раз!");

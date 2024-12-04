@@ -1,0 +1,55 @@
+-------------------------------------------------------------------------------
+Test set: com.game.bullsandcows.result.GuessAndResultCheckTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 2, Errors: 1, Skipped: 0, Time elapsed: 1.018 s <<< FAILURE! -- in com.game.bullsandcows.result.GuessAndResultCheckTest
+com.game.bullsandcows.result.GuessAndResultCheckTest.testCheckResultWithCows -- Time elapsed: 0.832 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+expected: <Р РµР·СѓР»СЊС‚Р°С‚: РЅР°Р№РґРµРЅРѕ 3 РєРѕСЂРѕРІС‹ Рё 0 Р±С‹РєР°
+> but was: <Результат: найдено 0 коровы и 0 быка
+Вы победили!>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.game.bullsandcows.result.GuessAndResultCheckTest.testCheckResultWithCows(GuessAndResultCheckTest.java:108)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.game.bullsandcows.result.GuessAndResultCheckTest.testGuessNumbers -- Time elapsed: 0.170 s <<< ERROR!
+org.mockito.exceptions.misusing.MissingMethodInvocationException: 
+
+when() requires an argument which has to be 'a method call on a mock'.
+For example:
+    when(mock.getArticles()).thenReturn(articles);
+
+Also, this error might show up because:
+1. you stub either of: final/private/native/equals()/hashCode() methods.
+   Those methods *cannot* be stubbed/verified.
+   Mocking methods declared on non-public parent classes is not supported.
+2. inside when() you don't call method on mock but on some other object.
+
+	at com.game.bullsandcows.result.GuessAndResultCheckTest.testGuessNumbers(GuessAndResultCheckTest.java:54)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+
+com.game.bullsandcows.result.GuessAndResultCheckTest.testCheckResult -- Time elapsed: 0.002 s <<< FAILURE!
+org.opentest4j.AssertionFailedError: 
+expected: <Р РµР·СѓР»СЊС‚Р°С‚: РЅР°Р№РґРµРЅРѕ 0 РєРѕСЂРѕРІС‹ Рё 3 Р±С‹РєР°
+Р’С‹ РїРѕР±РµРґРёР»Рё!
+> but was: <Результат: найдено 0 коровы и 0 быка
+Вы победили!>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.game.bullsandcows.result.GuessAndResultCheckTest.testCheckResult(GuessAndResultCheckTest.java:85)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

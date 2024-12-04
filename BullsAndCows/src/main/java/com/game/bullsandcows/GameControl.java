@@ -18,6 +18,7 @@ public class GameControl {
 
     public void startGame() throws InterruptedException {
         RepeatAndOptionCheck repeatAndOptionCheck = new RepeatAndOptionCheck();
+        repeatAndOptionCheck.repeatNumbersCheck();
         repeatAndOptionCheck.numberOptCheck();
         GuessAndResultCheck guessAndResultCheck = new GuessAndResultCheck();
         guessAndResultCheck.guessNumbers(repeatAndOptionCheck.getRepeat());

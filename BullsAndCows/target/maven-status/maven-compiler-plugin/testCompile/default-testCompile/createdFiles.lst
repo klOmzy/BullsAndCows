@@ -1,0 +1,5 @@
+com\game\bullsandcows\result\GuessAndResultCheckTest.class
+com\game\bullsandcows\input\FileInputStrategyTest.class
+com\game\bullsandcows\input\InputStrategyFactoryTest.class
+com\game\bullsandcows\GameControlTest.class
+com\game\bullsandcows\input\ConsoleInputStrategyTest.class
