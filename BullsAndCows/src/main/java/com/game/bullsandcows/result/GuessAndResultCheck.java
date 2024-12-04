@@ -61,15 +61,42 @@ public class GuessAndResultCheck {
             guessNumbers(repeatStateCheck);
         }
     }
-    public static Map<Integer, Integer> getHashMap2() {
-        return hashMap2;
+    public int[] checkResult(String secretNumber, String guessNumber) {
+        lengthNumber = secretNumber.length();
+        hashMap1 = convertStringToMap(secretNumber);
+        hashMap2 = convertStringToMap(guessNumber);
+
+        int bulls = 0;
+        int cows = 0;
+
+        for (int i = 0; i < lengthNumber; i++) {
+            if (hashMap1.containsValue(hashMap2.get(i)) && !hashMap1.get(i).equals(hashMap2.get(i))) {
+                cows++;
+            }
+        }
+        for (int i = 0; i < lengthNumber; i++) {
+            if (hashMap1.get(i).equals(hashMap2.get(i))) {
+                bulls++;
+            }
+        }
+
+        return new int[]{bulls, cows};
     }
-    public static void setHashMap2(Map<Integer, Integer> hashMap2) {
-        GuessAndResultCheck.hashMap2 = hashMap2;
+
+    private Map<Integer, Integer> convertStringToMap(String number) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < number.length(); i++) {
+            map.put(i, Character.getNumericValue(number.charAt(i)));
+        }
+        return map;
     }
 
     public static void setHashMap1(Map<Integer, Integer> hashMap1) {
         GuessAndResultCheck.hashMap1 = hashMap1;
+    }
+
+    public static void setHashMap2(Map<Integer, Integer> hashMap2) {
+        GuessAndResultCheck.hashMap2 = hashMap2;
     }
 
     public static void setLengthNumber(int lengthNumber) {
