@@ -21,6 +21,6 @@ public class GameControl {
         repeatAndOptionCheck.repeatNumbersCheck();
         repeatAndOptionCheck.numberOptCheck();
         GuessAndResultCheck guessAndResultCheck = new GuessAndResultCheck();
-        guessAndResultCheck.guessNumbers(repeatAndOptionCheck.getRepeat());
+        guessAndResultCheck.playGame(repeatAndOptionCheck.getRepeat());
     }
 }

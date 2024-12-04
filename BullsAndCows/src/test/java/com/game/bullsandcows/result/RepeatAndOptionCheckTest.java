@@ -2,7 +2,6 @@ package com.game.bullsandcows.result;
 
 import com.game.bullsandcows.input.InputStrategy;
 import com.game.bullsandcows.input.InputStrategyFactory;
-import com.game.bullsandcows.result.RepeatAndOptionCheck;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
