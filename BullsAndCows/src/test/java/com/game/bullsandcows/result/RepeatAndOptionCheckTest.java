@@ -37,7 +37,6 @@ public class RepeatAndOptionCheckTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        // Обновляем Scanner перед вызовом метода
         RepeatAndOptionCheck.setScanner(new Scanner(System.in));
 
         boolean result = repeatAndOptionCheck.repeatNumbersCheck();
@@ -52,7 +51,6 @@ public class RepeatAndOptionCheckTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        // Обновляем Scanner перед вызовом метода
         RepeatAndOptionCheck.setScanner(new Scanner(System.in));
 
         boolean result = repeatAndOptionCheck.repeatNumbersCheck();
@@ -82,7 +80,6 @@ public class RepeatAndOptionCheckTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        // Обновляем Scanner перед вызовом метода
         RepeatAndOptionCheck.setScanner(new Scanner(System.in));
 
         InputStrategy mockInputStrategy = mock(InputStrategy.class);
@@ -103,7 +100,6 @@ public class RepeatAndOptionCheckTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        // Обновляем Scanner перед вызовом метода
         RepeatAndOptionCheck.setScanner(new Scanner(System.in));
 
         InputStrategy mockInputStrategy = mock(InputStrategy.class);
@@ -124,7 +120,6 @@ public class RepeatAndOptionCheckTest {
         InputStream in = new ByteArrayInputStream(input.getBytes());
         System.setIn(in);
 
-        // Обновляем Scanner перед вызовом метода
         RepeatAndOptionCheck.setScanner(new Scanner(System.in));
 
         InputStrategy mockInputStrategy = mock(InputStrategy.class);

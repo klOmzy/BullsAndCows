@@ -102,4 +102,8 @@ public class GuessAndResultCheck {
     public static void setLengthNumber(int lengthNumber) {
         GuessAndResultCheck.lengthNumber = lengthNumber;
     }
+
+    public static void setScanner(Scanner scanner) {
+        GuessAndResultCheck.scanner = scanner;
+    }
 }
