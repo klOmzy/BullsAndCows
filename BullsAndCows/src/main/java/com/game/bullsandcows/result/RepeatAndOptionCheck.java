@@ -53,4 +53,20 @@ public class RepeatAndOptionCheck {
     public boolean getRepeat(){
         return repeat;
     }
+
+    public static void setHashMap1(Map<Integer, Integer> hashMap1) {
+        RepeatAndOptionCheck.hashMap1 = hashMap1;
+    }
+
+    public static void setLengthNumber(int lengthNumber) {
+        RepeatAndOptionCheck.lengthNumber = lengthNumber;
+    }
+
+    public static void setRepeat(boolean repeat) {
+        RepeatAndOptionCheck.repeat = repeat;
+    }
+
+    public static void setScanner(Scanner scanner) {
+        RepeatAndOptionCheck.scanner = scanner;
+    }
 }
