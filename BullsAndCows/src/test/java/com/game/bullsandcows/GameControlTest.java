@@ -9,6 +9,6 @@ class GameControlTest {
     void testGetInstance() {
         GameControl instance1 = GameControl.getInstance();
         GameControl instance2 = GameControl.getInstance();
-        assertSame(instance1, instance2, "Singleton instance should be the same");
+        assertSame(instance1, instance2, "instance должны быть одинаковыми");
     }
 }

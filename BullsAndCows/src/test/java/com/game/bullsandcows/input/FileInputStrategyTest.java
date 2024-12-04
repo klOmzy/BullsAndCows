@@ -10,6 +10,6 @@ class FileInputStrategyTest {
     void testInputNumbers() {
         FileInputStrategy fileInputStrategy = new FileInputStrategy();
         fileInputStrategy.inputNumbers(false);
-        assertTrue(fileInputStrategy.getHashMap1().size() > 0, "HashMap should not be empty");
+        assertTrue(fileInputStrategy.getHashMap1().size() > 0, "HashMap не должен быть пустым");
     }
 }

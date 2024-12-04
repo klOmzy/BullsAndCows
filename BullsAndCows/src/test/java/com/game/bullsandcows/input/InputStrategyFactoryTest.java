@@ -9,13 +9,13 @@ class InputStrategyFactoryTest {
     @Test
     void testCreateInputStrategyConsole() {
         InputStrategy strategy = InputStrategyFactory.createInputStrategy(1);
-        assertTrue(strategy instanceof ConsoleInputStrategy, "Strategy should be ConsoleInputStrategy");
+        assertTrue(strategy instanceof ConsoleInputStrategy, "Выбранная страгеия должна быть ConsoleInputStrategy");
     }
 
     @Test
     void testCreateInputStrategyFile() {
         InputStrategy strategy = InputStrategyFactory.createInputStrategy(2);
-        assertTrue(strategy instanceof FileInputStrategy, "Strategy should be FileInputStrategy");
+        assertTrue(strategy instanceof FileInputStrategy, "Выбранная страгеия должна быть FileInputStrategy");
     }
 
     @Test

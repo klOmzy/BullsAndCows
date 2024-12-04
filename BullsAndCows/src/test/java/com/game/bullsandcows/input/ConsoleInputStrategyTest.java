@@ -29,6 +29,6 @@ class ConsoleInputStrategyTest {
     void testInputNumbers() {
         ConsoleInputStrategy consoleInputStrategy = new ConsoleInputStrategy();
         consoleInputStrategy.inputNumbers(false);
-        assertEquals(3, consoleInputStrategy.getHashMap1().size(), "HashMap should have 3 elements");
+        assertEquals(3, consoleInputStrategy.getHashMap1().size(), "HashMap должен содержать 3 цифры");
     }
 }
