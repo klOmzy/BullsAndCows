@@ -27,7 +27,7 @@
     git clone https://github.com/klOmzy/BullsAndCows.git
     cd BullsAndCows
     
-2. Соберите проект:
+3. Соберите проект:
 
    
     mvn clean install
