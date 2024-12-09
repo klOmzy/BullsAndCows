@@ -13,7 +13,7 @@
 
 Перед началом убедитесь, что у вас установлены следующие компоненты:
 
-- Java Development Kit (JDK) 11 или выше
+- Java Development Kit (JDK) 17 или выше
 - Maven
 - IDE (например, IntelliJ IDEA, Eclipse)
 
