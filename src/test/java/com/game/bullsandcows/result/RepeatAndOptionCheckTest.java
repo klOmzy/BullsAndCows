@@ -88,7 +88,7 @@ public class RepeatAndOptionCheckTest {
 
             verify(mockInputStrategy).inputNumbers(anyBoolean());
             assertEquals(mockInputStrategy.getLengthNumber(), repeatAndOptionCheck.getLengthNumber());
-            assertEquals(mockInputStrategy.getHashMap1(), repeatAndOptionCheck.getHashMap1());
+            assertEquals(mockInputStrategy.getSecretNumbers(), repeatAndOptionCheck.getSecretNumbers());
         }
     }
 
@@ -108,7 +108,7 @@ public class RepeatAndOptionCheckTest {
 
             verify(mockInputStrategy).inputNumbers(anyBoolean());
             assertEquals(mockInputStrategy.getLengthNumber(), repeatAndOptionCheck.getLengthNumber());
-            assertEquals(mockInputStrategy.getHashMap1(), repeatAndOptionCheck.getHashMap1());
+            assertEquals(mockInputStrategy.getSecretNumbers(), repeatAndOptionCheck.getSecretNumbers());
         }
     }
 
@@ -128,7 +128,7 @@ public class RepeatAndOptionCheckTest {
 
             verify(mockInputStrategy).inputNumbers(anyBoolean());
             assertEquals(mockInputStrategy.getLengthNumber(), repeatAndOptionCheck.getLengthNumber());
-            assertEquals(mockInputStrategy.getHashMap1(), repeatAndOptionCheck.getHashMap1());
+            assertEquals(mockInputStrategy.getSecretNumbers(), repeatAndOptionCheck.getSecretNumbers());
         }
     }
 }

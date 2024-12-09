@@ -2,10 +2,7 @@ package com.game.bullsandcows.result;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
 
-import java.io.ByteArrayInputStream;
-import java.io.InputStream;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -38,25 +35,25 @@ class GuessAndResultCheckTest {
         expectedHashMap.put(2, 3);
         expectedHashMap.put(3, 4);
 
-        assertEquals(expectedHashMap, GuessAndResultCheck.getHashMap2());
+        assertEquals(expectedHashMap, GuessAndResultCheck.getGuessedNumbers());
     }
 
     @Test
     void testCheckResult() {
-        Map<Integer, Integer> hashMap1 = new HashMap<>();
-        hashMap1.put(0, 1);
-        hashMap1.put(1, 2);
-        hashMap1.put(2, 3);
-        hashMap1.put(3, 4);
+        Map<Integer, Integer> secretNumbers = new HashMap<>();
+        secretNumbers.put(0, 1);
+        secretNumbers.put(1, 2);
+        secretNumbers.put(2, 3);
+        secretNumbers.put(3, 4);
 
-        Map<Integer, Integer> hashMap2 = new HashMap<>();
-        hashMap2.put(0, 1);
-        hashMap2.put(1, 2);
-        hashMap2.put(2, 3);
-        hashMap2.put(3, 4);
+        Map<Integer, Integer> guessedNumbers = new HashMap<>();
+        guessedNumbers.put(0, 1);
+        guessedNumbers.put(1, 2);
+        guessedNumbers.put(2, 3);
+        guessedNumbers.put(3, 4);
 
-        GuessAndResultCheck.setHashMap1(hashMap1);
-        GuessAndResultCheck.setHashMap2(hashMap2);
+        GuessAndResultCheck.setSecretNumbers(secretNumbers);
+        GuessAndResultCheck.setGuessedNumbers(guessedNumbers);
         GuessAndResultCheck.setLengthNumber(4);
 
         assertTrue(guessAndResultCheck.checkResult());
@@ -64,20 +61,20 @@ class GuessAndResultCheckTest {
 
     @Test
     void testCheckResultWithCows() {
-        Map<Integer, Integer> hashMap1 = new HashMap<>();
-        hashMap1.put(0, 1);
-        hashMap1.put(1, 2);
-        hashMap1.put(2, 3);
-        hashMap1.put(3, 4);
+        Map<Integer, Integer> secretNumbers = new HashMap<>();
+        secretNumbers.put(0, 1);
+        secretNumbers.put(1, 2);
+        secretNumbers.put(2, 3);
+        secretNumbers.put(3, 4);
 
-        Map<Integer, Integer> hashMap2 = new HashMap<>();
-        hashMap2.put(0, 4);
-        hashMap2.put(1, 3);
-        hashMap2.put(2, 2);
-        hashMap2.put(3, 1);
+        Map<Integer, Integer> guessedNumbers = new HashMap<>();
+        guessedNumbers.put(0, 4);
+        guessedNumbers.put(1, 3);
+        guessedNumbers.put(2, 2);
+        guessedNumbers.put(3, 1);
 
-        GuessAndResultCheck.setHashMap1(hashMap1);
-        GuessAndResultCheck.setHashMap2(hashMap2);
+        GuessAndResultCheck.setSecretNumbers(secretNumbers);
+        GuessAndResultCheck.setGuessedNumbers(guessedNumbers);
         GuessAndResultCheck.setLengthNumber(4);
 
         assertFalse(guessAndResultCheck.checkResult());

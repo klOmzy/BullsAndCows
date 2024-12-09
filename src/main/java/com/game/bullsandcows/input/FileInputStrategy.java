@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 public class FileInputStrategy implements InputStrategy {
-    private static Map<Integer, Integer> hashMap1 = new HashMap<>();
+    private static Map<Integer, Integer> secretNumbers = new HashMap<>();
     private static int lengthNumber;
 
     @Override
@@ -27,26 +27,26 @@ public class FileInputStrategy implements InputStrategy {
             while ((line = reader.readLine()) != null) {
                 int number = Integer.parseInt(line);
                 int key = mapKey++;
-                hashMap1.put(key, number);
+                secretNumbers.put(key, number);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        lengthNumber = hashMap1.size();
+        lengthNumber = secretNumbers.size();
         for (int i = 0; i < lengthNumber; i++) {
-            if (hashMap1.get(i) < 10) {
-                set.add(hashMap1.get(i));
+            if (secretNumbers.get(i) < 10) {
+                set.add(secretNumbers.get(i));
             } else {
                 System.out.println("Вводить необходимо цифру! Измените исходный файл!");
-                hashMap1.clear();
+                secretNumbers.clear();
                 set.clear();
                 checkNumbers = false;
             }
         }
-        if(hashMap1.size()==lengthNumber) {
+        if(secretNumbers.size()==lengthNumber) {
             if (!repeatStateCheck && set.size() < lengthNumber) {
                 System.out.println("Цифры не должны повторяться! Измените исходный файл!");
-                hashMap1.clear();
+                secretNumbers.clear();
                 set.clear();
                 checkNumbers = false;
             }
@@ -61,7 +61,7 @@ public class FileInputStrategy implements InputStrategy {
         return lengthNumber;
     }
     @Override
-    public Map<Integer, Integer> getHashMap1() {
-        return hashMap1;
+    public Map<Integer, Integer> getSecretNumbers() {
+        return secretNumbers;
     }
 }

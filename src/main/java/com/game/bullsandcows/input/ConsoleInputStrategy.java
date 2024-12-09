@@ -3,7 +3,7 @@ package com.game.bullsandcows.input;
 import java.util.*;
 
 public class ConsoleInputStrategy implements InputStrategy {
-    private static Map<Integer, Integer> hashMap1 = new HashMap<>();
+    private static Map<Integer, Integer> secretNumbers = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
     private static int lengthNumber;
 
@@ -15,19 +15,19 @@ public class ConsoleInputStrategy implements InputStrategy {
         Set<Integer> set = new HashSet<>();
         boolean checkNumbers = false;
         while (!checkNumbers) {
-            hashMap1.clear();
+            secretNumbers.clear();
             set.clear();
             for (int i = 0; i < lengthNumber; i++) {
                 int number = scanner.nextInt();
                 if (number < 10) {
-                    hashMap1.put(i, number);
+                    secretNumbers.put(i, number);
                     set.add(number);
                 } else {
                     System.out.println("Вводить необходимо цифру! Попробуйте еще раз!");
                     break;
                 }
             }
-            if(hashMap1.size()==lengthNumber) {
+            if(secretNumbers.size()==lengthNumber) {
                 if (!repeatStateCheck && set.size() < lengthNumber) {
                     System.out.println("Цифры не должны повторяться! Попробуйте еще раз!");
                 } else {
@@ -41,7 +41,7 @@ public class ConsoleInputStrategy implements InputStrategy {
         return lengthNumber;
     }
     @Override
-    public Map<Integer, Integer> getHashMap1() {
-        return hashMap1;
+    public Map<Integer, Integer> getSecretNumbers() {
+        return secretNumbers;
     }
 }

@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class RepeatAndOptionCheck {
     private static Scanner scanner = new Scanner(System.in);
     private static boolean repeat;
-    private static Map<Integer, Integer> hashMap1 = new HashMap<>();
+    private static Map<Integer, Integer> secretNumbers = new HashMap<>();
     private static int lengthNumber;
 
     public static boolean repeatNumbersCheck() {
@@ -37,7 +37,7 @@ public class RepeatAndOptionCheck {
                 InputStrategy inputStrategy = InputStrategyFactory.createInputStrategy(numbersOpt);
                 inputStrategy.inputNumbers(repeat);
                 lengthNumber = inputStrategy.getLengthNumber();
-                hashMap1 = inputStrategy.getHashMap1();
+                secretNumbers = inputStrategy.getSecretNumbers();
                 numbersOptCheck = true;
             } else {
                 System.out.println("Необходимо вводить 1 или 2");
@@ -47,15 +47,15 @@ public class RepeatAndOptionCheck {
     public int getLengthNumber() {
         return lengthNumber;
     }
-    public Map<Integer, Integer> getHashMap1() {
-        return hashMap1;
+    public Map<Integer, Integer> getSecretNumbers() {
+        return secretNumbers;
     }
     public boolean getRepeat(){
         return repeat;
     }
 
-    public static void setHashMap1(Map<Integer, Integer> hashMap1) {
-        RepeatAndOptionCheck.hashMap1 = hashMap1;
+    public static void setSecretNumbers(Map<Integer, Integer> secretNumbers) {
+        RepeatAndOptionCheck.secretNumbers = secretNumbers;
     }
 
     public static void setLengthNumber(int lengthNumber) {

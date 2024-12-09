@@ -3,15 +3,15 @@ package com.game.bullsandcows.result;
 import java.util.*;
 
 public class GuessAndResultCheck {
-    private static Map<Integer, Integer> hashMap1 = new HashMap<>();
-    private static Map<Integer, Integer> hashMap2 = new HashMap<>();
+    private static Map<Integer, Integer> secretNumbers = new HashMap<>();
+    private static Map<Integer, Integer> guessedNumbers = new HashMap<>();
     private static Scanner scanner = new Scanner(System.in);
     private static int lengthNumber;
 
     public void playGame(boolean repeatStateCheck) throws InterruptedException {
         RepeatAndOptionCheck repeatAndOptionCheck = new RepeatAndOptionCheck();
         lengthNumber = repeatAndOptionCheck.getLengthNumber();
-        hashMap1 = repeatAndOptionCheck.getHashMap1();
+        secretNumbers = repeatAndOptionCheck.getSecretNumbers();
 
         boolean victory = false;
         while (!victory) {
@@ -25,19 +25,19 @@ public class GuessAndResultCheck {
         Set<Integer> set = new HashSet<>();
         boolean checkNumbers = false;
         while (!checkNumbers) {
-            hashMap2.clear();
+            guessedNumbers.clear();
             set.clear();
             for (int i = 0; i < lengthNumber; i++) {
                 int number = scanner.nextInt();
                 if (number < 10) {
-                    hashMap2.put(i, number);
+                    guessedNumbers.put(i, number);
                     set.add(number);
                 } else {
                     System.out.println("Вводить необходимо цифру! Попробуйте еще раз!");
                     break;
                 }
             }
-            if (hashMap2.size() == lengthNumber) {
+            if (guessedNumbers.size() == lengthNumber) {
                 if (!repeatStateCheck && set.size() < lengthNumber) {
                     System.out.println("Цифры не должны повторяться! Попробуйте еще раз!");
                 } else {
@@ -51,12 +51,12 @@ public class GuessAndResultCheck {
         int sum1 = 0;
         int sum2 = 0;
         for (int i = 0; i < lengthNumber; i++) {
-            if (hashMap1.containsValue(hashMap2.get(i)) && !hashMap1.get(i).equals(hashMap2.get(i))) {
+            if (secretNumbers.containsValue(guessedNumbers.get(i)) && !secretNumbers.get(i).equals(guessedNumbers.get(i))) {
                 sum1 = sum1 + 1;
             }
         }
         for (int i = 0; i < lengthNumber; i++) {
-            if (hashMap1.get(i).equals(hashMap2.get(i))) {
+            if (secretNumbers.get(i).equals(guessedNumbers.get(i))) {
                 sum2 = sum2 + 1;
             }
         }
@@ -71,19 +71,19 @@ public class GuessAndResultCheck {
 
     public int[] checkResult(String secretNumber, String guessNumber) {
         lengthNumber = secretNumber.length();
-        hashMap1 = convertStringToMap(secretNumber);
-        hashMap2 = convertStringToMap(guessNumber);
+        secretNumbers = convertStringToMap(secretNumber);
+        guessedNumbers = convertStringToMap(guessNumber);
 
         int bulls = 0;
         int cows = 0;
 
         for (int i = 0; i < lengthNumber; i++) {
-            if (hashMap1.containsValue(hashMap2.get(i)) && !hashMap1.get(i).equals(hashMap2.get(i))) {
+            if (secretNumbers.containsValue(guessedNumbers.get(i)) && !secretNumbers.get(i).equals(guessedNumbers.get(i))) {
                 cows++;
             }
         }
         for (int i = 0; i < lengthNumber; i++) {
-            if (hashMap1.get(i).equals(hashMap2.get(i))) {
+            if (secretNumbers.get(i).equals(guessedNumbers.get(i))) {
                 bulls++;
             }
         }
@@ -99,12 +99,12 @@ public class GuessAndResultCheck {
         return map;
     }
 
-    public static void setHashMap1(Map<Integer, Integer> hashMap1) {
-        GuessAndResultCheck.hashMap1 = hashMap1;
+    public static void setSecretNumbers(Map<Integer, Integer> secretNumbers) {
+        GuessAndResultCheck.secretNumbers = secretNumbers;
     }
 
-    public static void setHashMap2(Map<Integer, Integer> hashMap2) {
-        GuessAndResultCheck.hashMap2 = hashMap2;
+    public static void setGuessedNumbers(Map<Integer, Integer> guessedNumbers) {
+        GuessAndResultCheck.guessedNumbers = guessedNumbers;
     }
 
     public static void setLengthNumber(int lengthNumber) {
@@ -119,11 +119,11 @@ public class GuessAndResultCheck {
         return lengthNumber;
     }
 
-    public static Map<Integer, Integer> getHashMap1() {
-        return hashMap1;
+    public static Map<Integer, Integer> getSecretNumbers() {
+        return secretNumbers;
     }
 
-    public static Map<Integer, Integer> getHashMap2() {
-        return hashMap2;
+    public static Map<Integer, Integer> getGuessedNumbers() {
+        return guessedNumbers;
     }
 }

@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
-import java.util.Scanner;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -29,6 +28,6 @@ class ConsoleInputStrategyTest {
     void testInputNumbers() {
         ConsoleInputStrategy consoleInputStrategy = new ConsoleInputStrategy();
         consoleInputStrategy.inputNumbers(false);
-        assertEquals(3, consoleInputStrategy.getHashMap1().size(), "HashMap должен содержать 3 цифры");
+        assertEquals(3, consoleInputStrategy.getSecretNumbers().size(), "HashMap должен содержать 3 цифры");
     }
 }
