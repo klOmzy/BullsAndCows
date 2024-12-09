@@ -28,13 +28,20 @@ public class GuessAndResultCheck {
             guessedNumbers.clear();
             set.clear();
             for (int i = 0; i < lengthNumber; i++) {
-                int number = scanner.nextInt();
-                if (number < 10) {
-                    guessedNumbers.put(i, number);
-                    set.add(number);
-                } else {
-                    System.out.println("Вводить необходимо цифру! Попробуйте еще раз!");
-                    break;
+                while (true) {
+                    try {
+                        int number = scanner.nextInt();
+                        if (number < 0 || number >= 10) {
+                            System.out.println("Вводить необходимо цифру от 0 до 9! Попробуйте еще раз!");
+                            continue;
+                        }
+                        guessedNumbers.put(i, number);
+                        set.add(number);
+                        break;
+                    } catch (InputMismatchException e) {
+                        System.out.println("Некорректный ввод. Пожалуйста, введите целое число.");
+                        scanner.next();
+                    }
                 }
             }
             if (guessedNumbers.size() == lengthNumber) {
